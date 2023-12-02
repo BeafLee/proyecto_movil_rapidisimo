@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/esquinas_redondeadas"
+    android:backgroundTint="@color/colorAccentDark"
+    android:layout_margin="15dp"
+    android:padding="10dp"
+    android:elevation="10dp"
+    tools:context=".fragments.AgregarEstadoFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vehiculo"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextViewVehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textAutoComplete|textAutoCorrect"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/input_layout_nombre"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_order"
+                android:hint="Nombre del estado">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtNombre"
+                    android:inputType="text"
+                    android:background="@drawable/esquinas_redondeadas"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_location"
+                    android:enabled="false"
+                    android:hint="Latitud">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtLatitud"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/esquinas_redondeadas"
+                        android:backgroundTint="@color/colorAccent"
+                        android:text=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_location"
+                    android:enabled="false"
+                    android:hint="Longitud">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtLongitud"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/esquinas_redondeadas"
+                        android:backgroundTint="@color/colorAccent"
+                        android:text=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"/>
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_location"
+                    android:layout_gravity="center"
+                    android:background="@drawable/esquinas_redondeadas"
+                    android:backgroundTint="@color/primaryColorDark"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/input_layout_descripcion"
+                app:endIconMode="clear_text"
+                android:hint="Descripción"
+                app:startIconDrawable="@drawable/ic_description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtDescripcion"
+                    android:inputType="textMultiLine"
+                    android:background="@drawable/esquinas_redondeadas"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text=""/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRegistrar"
+                android:backgroundTint="@color/primaryColorDark"
+                android:text="REGISTRAR ESTADO"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

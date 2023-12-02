@@ -3,23 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_inicio">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="pe.usat.moviles.rapidisimoapp.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_inicio"
+        android:name="pe.usat.moviles.rapidisimoapp.fragments.HomeFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_gallery"
+            app:destination="@id/nav_solicitudes" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/nav_perfil" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="pe.usat.moviles.rapidisimoapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_solicitudes"
+        android:name="pe.usat.moviles.rapidisimoapp.fragments.OrderFragment"
+        android:label="@string/menu_solicitudes"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_nav_solicitudes_to_detalleSolicitudFragment"
+            app:destination="@id/detalleSolicitudFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="pe.usat.moviles.rapidisimoapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_perfil"
+        android:name="pe.usat.moviles.rapidisimoapp.fragments.ProfileFragment"
+        android:label="@string/menu_perfil"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/agregarEstadoFragment"
+        android:name="pe.usat.moviles.rapidisimoapp.fragments.AgregarEstadoFragment"
+        android:label="Registrar Nuevo Estado"
+        tools:layout="@layout/fragment_agregar_estado" />
+    <fragment
+        android:id="@+id/detalleSolicitudFragment"
+        android:name="pe.usat.moviles.rapidisimoapp.fragments.DetalleSolicitudFragment"
+        android:label="Detalle de Solicitud"
+        tools:layout="@layout/fragment_detalle_solicitud" >
+        <action
+            android:id="@+id/action_detalleSolicitudFragment_to_agregarEstadoFragment"
+            app:destination="@id/agregarEstadoFragment" />
+    </fragment>
 </navigation>
