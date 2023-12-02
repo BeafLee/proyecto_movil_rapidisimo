@@ -1,5 +1,6 @@
 package pe.usat.moviles.rapidisimoapp.retrofit;
 
+import pe.usat.moviles.rapidisimoapp.response.DetalleSolicitudResponse;
 import pe.usat.moviles.rapidisimoapp.response.SolicitudListadoActivasResponse;
 import pe.usat.moviles.rapidisimoapp.response.SolicitudListadoResponse;
 import retrofit2.Call;
@@ -7,6 +8,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiService {
     /*
@@ -29,5 +31,9 @@ public interface ApiService {
 
     @GET("/solicitud/listar/0")
     Call<SolicitudListadoResponse> listadoSolicitudes();
+
+    @GET("/solicitud/detalle/{solicitudId}")
+    Call<DetalleSolicitudResponse> obtenerDetalleSolicitud(@Path("solicitudId") int solicitudId);
+
 
 }
