@@ -26,6 +26,11 @@ public interface ApiService {
 
 
     */
+
+    @FormUrlEncoded
+    @POST("/login")
+    Call<GenericoResponse> login(@Field("usuario") String usuario, @Field("clave") String clave);
+
     @FormUrlEncoded
     @POST("/solicitud/conductor")
     Call<SolicitudListadoActivasResponse> listadoSolicitudesAtendidas(@Field("conductor_id") int conductorId);

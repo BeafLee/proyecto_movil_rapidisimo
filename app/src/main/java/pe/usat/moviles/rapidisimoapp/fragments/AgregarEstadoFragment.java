@@ -80,7 +80,11 @@ public class AgregarEstadoFragment extends Fragment implements LocationListener 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // Obtén la opción seleccionada por el usuario
-                txtNombreEstado = (String) adapterView.getItemAtPosition(i);
+                if (i <= 2) {
+                    txtNombreEstado = "VEHICULO " + (String) adapterView.getItemAtPosition(i);
+                } else {
+                    txtNombreEstado = (String) adapterView.getItemAtPosition(i);
+                }
             }
         });
 

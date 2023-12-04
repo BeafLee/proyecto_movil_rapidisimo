@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtUser"
                     android:inputType="textEmailAddress"
-                    android:text="44177590"/>
+                    android:text="usuario_conductor1"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/txtPass"
                     android:inputType="textPassword"
-                    android:text="usat2023"/>
+                    android:text="contrasena1"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
