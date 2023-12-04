@@ -41,21 +41,20 @@
                 android:layout_height="10dp"/>
             -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/input_layout_nombre"
-                app:endIconMode="clear_text"
                 app:startIconDrawable="@drawable/ic_order"
                 android:hint="Nombre del estado">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/txtNombre"
-                    android:inputType="text"
                     android:background="@drawable/esquinas_redondeadas"
-                    android:backgroundTint="@color/colorAccent"
-                    android:text=""/>
+                    android:backgroundTint="@color/colorAccent"/>
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <Space
@@ -113,6 +112,7 @@
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
                 <ImageButton
+                    android:id="@+id/btnUbicacion"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_location"
@@ -131,13 +131,13 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_layout_descripcion"
                 app:endIconMode="clear_text"
-                android:hint="Descripción"
+                android:hint="Observación"
                 app:startIconDrawable="@drawable/ic_description">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/txtDescripcion"
+                    android:id="@+id/txtObservacion"
                     android:inputType="textMultiLine"
                     android:background="@drawable/esquinas_redondeadas"
                     android:backgroundTint="@color/colorAccent"

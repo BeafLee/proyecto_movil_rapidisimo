@@ -85,6 +85,8 @@ public class SolicitudAdapter extends RecyclerView.Adapter<SolicitudAdapter.Soli
                         //Toast.makeText(itemView.getContext(), "GO TO DETAILS", Toast.LENGTH_SHORT).show();
                         Bundle bundle = new Bundle();
                         bundle.putInt("solicitudId", solicitud.getId());
+                        bundle.putInt("conductorId", solicitud.getCONDUCTORid());
+                        bundle.putInt("vehiculoId", solicitud.getVEHICULOid());
 
                         NavController navController = Navigation.findNavController((Activity) itemView.getContext(), R.id.nav_host_fragment_content_navigation);
                         navController.navigate(R.id.detalleSolicitudFragment, bundle);

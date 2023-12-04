@@ -17,6 +17,8 @@ public class Solicitud {
     private int TARIFAid;
     private int CLIENTEid;
     private int PAGO_SOLICITUDid;
+    private int CONDUCTORid;
+    private int VEHICULOid;
 
     public int getId() {
         return id;
@@ -136,5 +138,21 @@ public class Solicitud {
 
     public void setPAGO_SOLICITUDid(int PAGO_SOLICITUDid) {
         this.PAGO_SOLICITUDid = PAGO_SOLICITUDid;
+    }
+
+    public int getCONDUCTORid() {
+        return CONDUCTORid;
+    }
+
+    public void setCONDUCTORid(int CONDUCTORid) {
+        this.CONDUCTORid = CONDUCTORid;
+    }
+
+    public int getVEHICULOid() {
+        return VEHICULOid;
+    }
+
+    public void setVEHICULOid(int VEHICULOid) {
+        this.VEHICULOid = VEHICULOid;
     }
 }

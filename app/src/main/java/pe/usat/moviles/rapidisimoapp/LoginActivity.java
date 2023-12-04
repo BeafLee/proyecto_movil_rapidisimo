@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.button.MaterialButton;
+
+import pe.usat.moviles.rapidisimoapp.util.LocationService;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -13,7 +16,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
 
         MaterialButton btnIngresar = findViewById(R.id.btnIngresar);
         btnIngresar.setOnClickListener(view -> {
