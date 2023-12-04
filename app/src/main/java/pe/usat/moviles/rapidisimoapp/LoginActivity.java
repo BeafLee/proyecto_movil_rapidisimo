@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     MaterialButton btnIngresar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -36,29 +36,29 @@ public class LoginActivity extends AppCompatActivity {
 
         btnIngresar = findViewById(R.id.btnIngresar);
         btnIngresar.setOnClickListener(view -> {
-            String user = txtUser.getText().toString();
-            String pass = txtPass.getText().toString();
+            final String user = txtUser.getText().toString();
+            final String pass = txtPass.getText().toString();
 
             if (user.isEmpty() && user.isEmpty()) {
                 Toast.makeText(this, "Porfavor ingrese datos", Toast.LENGTH_SHORT).show();
                 return;
             } else {
-                ApiService apiService = RetrofitClient.createService();
-                Call<GenericoResponse> call = apiService.login(user, pass);
+                final ApiService apiService = RetrofitClient.createService();
+                final Call<GenericoResponse> call = apiService.login(user, pass);
                 call.enqueue(new Callback<GenericoResponse>() {
                     @Override
-                    public void onResponse(Call<GenericoResponse> call, Response<GenericoResponse> response) {
+                    public void onResponse(final Call<GenericoResponse> call, final Response<GenericoResponse> response) {
                         if (response.code() == 200) {
                             if (response.body().isStatus()) {
-                                JsonObject data = response.body().getData();
+                                final JsonObject data = response.body().getData();
                                 //Verificamos si conductor
-                                if (data.get("tipoUsuario").getAsString().equals("C")) {
-                                    JsonObject conductor = data.get("conductor").getAsJsonObject();
+                                if (data.get("tipoUsuario").getAsString().equals("D")) {
+                                    final JsonObject conductor = data.get("conductor").getAsJsonObject();
 
                                     if (conductor.get("estado").getAsString().equals("A")) {
                                         //Guardamos los datos de sesion
-                                        SharedPreferences sesion = getSharedPreferences("sesion", Context.MODE_PRIVATE);
-                                        SharedPreferences.Editor editor = sesion.edit();
+                                        final SharedPreferences sesion = getSharedPreferences("sesion", Context.MODE_PRIVATE);
+                                        final SharedPreferences.Editor editor = sesion.edit();
                                         editor.putString("token", data.get("token").getAsString());
                                         editor.putInt("usuarioId", data.get("id").getAsInt());
 
@@ -75,12 +75,13 @@ public class LoginActivity extends AppCompatActivity {
                                         LoginActivity.this.finish();
                                     } else {
                                         Toast.makeText(LoginActivity.this, "No es un usuario activo", Toast.LENGTH_SHORT).show();
-                                                                            }
-
-
+                                    }
                                 } else {
                                     Toast.makeText(LoginActivity.this, "Usted no es conductor", Toast.LENGTH_SHORT).show();
                                 }
+
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Error con el servicio", Toast.LENGTH_SHORT).show();
 
                             }
                         }
@@ -89,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<GenericoResponse> call, Throwable t) {
+                    public void onFailure(final Call<GenericoResponse> call, final Throwable t) {
                         Log.e("Error Login", t.getMessage());
                         Toast.makeText(LoginActivity.this, "Error al conectarse con el servidor", Toast.LENGTH_SHORT).show();
                     }
